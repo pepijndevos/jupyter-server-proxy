@@ -661,7 +661,7 @@ class SuperviseAndProxyHandler(LocalProxyHandler):
 
                 timeout = self.get_timeout()
 
-                proc = SupervisedProcess(self.name, *cmd, env=server_env, ready_func=self._http_ready_func, ready_timeout=timeout, log=self.log)
+                proc = SupervisedProcess(self.name, *cmd, env=server_env, ready_func=self._http_ready_func, ready_timeout=timeout, log=self.log, shell=True)
                 self.state['proc'] = proc
 
                 try:
